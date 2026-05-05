@@ -42,9 +42,9 @@ boss install
 4. Adicione o caminho do diretório `src` e o diretório `modules` (gerado pelo Boss) ao campo **Library Path**.
 
 ### 2. Instalação do Pacote na IDE
-1. Abra o projeto de pacote localizado em `packages/delphi/BuscaFiscal.dpk`.
-2. No Gerenciador de Projetos (*Project Manager*), compile o projeto (`Compile`).
-3. Após a compilação, execute a instalação (`Install`).
+1. Abra o grupo de projetos `BuscaFiscalGroup.groupproj` localizado na raiz do repositório.
+2. No Gerenciador de Projetos (*Project Manager*), localize o projeto `BuscaFiscal.bpl`.
+3. Clique com o botão direito e selecione **Compile**, e depois **Install**.
 4. O componente `TBuscaFiscal` será disponibilizado na categoria **Busca Fiscal** da paleta de componentes.
 
 ---
