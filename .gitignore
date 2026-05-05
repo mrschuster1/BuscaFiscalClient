@@ -1,0 +1,37 @@
+# Boss
+modules/
+boss-lock.json
+
+# Delphi
+__history/
+__recovery/
+*.dcu
+*.identcache
+*.local
+*.res
+*.tvsconfig
+*.stat
+*.otares
+*.~*
+
+# Binaries
+*.exe
+*.dll
+*.bpl
+*.dcp
+win32/
+win64/
+Debug/
+Release/
+
+# Agent / Tools
+.agent/
+.agents/
+.gemini/
+.gsd/
+adapters/
+docs/
+scripts/
+GSD-STYLE.md
+PROJECT_RULES.md
+model_capabilities.yaml
