@@ -1,4 +1,4 @@
-﻿unit View.Main;
+unit View.Main;
 
 interface
 
@@ -216,8 +216,6 @@ end;
 procedure TFormMain.btnGetImageClick(Sender: TObject);
 var
   LResponse: IBuscaFiscalImageResponse;
-  LStream: TStringStream;
-  LBytes: TBytes;
 begin
   SyncConfig;
   Log('Buscando imagem para GTIN: ' + edtImageGTIN.Text);

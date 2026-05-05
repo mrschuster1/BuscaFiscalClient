@@ -414,14 +414,14 @@ object FormMain: TFormMain
           object lblGTINHint: TLabel
             Left = 40
             Top = 115
-            Width = 263
+            Width = 256
             Height = 15
             Caption = 'Insira o c'#243'digo EAN/GTIN para busca detalhada.'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clSilver
             Font.Height = -12
             Font.Name = 'Segoe UI Semibold'
-            Font.Style = [fsItalic]
+            Font.Style = []
             Font.Quality = fqClearTypeNatural
             ParentFont = False
           end
@@ -833,7 +833,7 @@ object FormMain: TFormMain
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 4210752
           Font.Height = -12
-          Font.Name = 'Consolas'
+          Font.Name = 'Segoe UI Semibold'
           Font.Style = []
           Font.Quality = fqClearTypeNatural
           ParentFont = False
@@ -864,7 +864,7 @@ object FormMain: TFormMain
         object lblImageInfo: TLabel
           Left = 0
           Top = 272
-          Width = 300
+          Width = 123
           Height = 13
           Align = alBottom
           Alignment = taCenter
@@ -876,8 +876,6 @@ object FormMain: TFormMain
           Font.Style = []
           Font.Quality = fqClearTypeNatural
           ParentFont = False
-          ExplicitTop = 277
-          ExplicitWidth = 123
         end
       end
     end

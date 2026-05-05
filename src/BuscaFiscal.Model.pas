@@ -24,7 +24,7 @@ type
     function AsObject: TObject;
   end;
 
-  { Base class for non-ref-counted interface implementation (ideal for JSON models) }
+  { Base class for ref-counted model interfaces }
   TBuscaFiscalModelBase = class(TInterfacedObject, IBuscaFiscalModel)
   public
     function AsObject: TObject;
@@ -339,6 +339,8 @@ type
     function Message(const AValue: string): IBuscaFiscalResponse;
     function AddProduto(const AValue: IBuscaFiscalProduto)
       : IBuscaFiscalResponse;
+    function _AddRef: Integer; stdcall;
+    function _Release: Integer; stdcall;
   end;
 
   TBuscaFiscalImageResponse = class(TBuscaFiscalModelBase,
@@ -376,6 +378,8 @@ type
     class function New: IBuscaFiscalImageResponse;
     function Success(const AValue: Boolean): IBuscaFiscalImageResponse;
     function Message(const AValue: string): IBuscaFiscalImageResponse;
+    function _AddRef: Integer; stdcall;
+    function _Release: Integer; stdcall;
   end;
 
   TBuscaFiscalBatchItem = class(TBuscaFiscalModelBase, IBuscaFiscalBatchItem)
@@ -405,6 +409,8 @@ type
     class function New: IBuscaFiscalBatchRequest;
     function AddItem(const AValue: IBuscaFiscalBatchItem)
       : IBuscaFiscalBatchRequest;
+    function _AddRef: Integer; stdcall;
+    function _Release: Integer; stdcall;
   end;
 
   TBuscaFiscalBatchResult = class(TBuscaFiscalModelBase,
@@ -463,9 +469,14 @@ type
     class function New: IBuscaFiscalBatchResponse;
     function Success(const AValue: Boolean): IBuscaFiscalBatchResponse;
     function Message(const AValue: string): IBuscaFiscalBatchResponse;
+    function _AddRef: Integer; stdcall;
+    function _Release: Integer; stdcall;
   end;
 
 implementation
+
+type
+  TInterfacedObjectAccess = class(TInterfacedObject);
 
 { TBuscaFiscalModelBase }
 
@@ -483,6 +494,8 @@ function TBuscaFiscalModelBase._Release: Integer;
 begin
   Result := -1;
 end;
+
+
 
 { TBuscaFiscalTributo }
 
@@ -1242,6 +1255,48 @@ function TBuscaFiscalBatchResponse.Message(const AValue: string)
 begin
   Result := Self;
   FMessage := AValue;
+end;
+
+
+
+function TBuscaFiscalResponse._AddRef: Integer;
+begin
+  Result := TInterfacedObjectAccess(Self)._AddRef;
+end;
+
+function TBuscaFiscalResponse._Release: Integer;
+begin
+  Result := TInterfacedObjectAccess(Self)._Release;
+end;
+
+function TBuscaFiscalImageResponse._AddRef: Integer;
+begin
+  Result := TInterfacedObjectAccess(Self)._AddRef;
+end;
+
+function TBuscaFiscalImageResponse._Release: Integer;
+begin
+  Result := TInterfacedObjectAccess(Self)._Release;
+end;
+
+function TBuscaFiscalBatchResponse._AddRef: Integer;
+begin
+  Result := TInterfacedObjectAccess(Self)._AddRef;
+end;
+
+function TBuscaFiscalBatchResponse._Release: Integer;
+begin
+  Result := TInterfacedObjectAccess(Self)._Release;
+end;
+
+function TBuscaFiscalBatchRequest._AddRef: Integer;
+begin
+  Result := TInterfacedObjectAccess(Self)._AddRef;
+end;
+
+function TBuscaFiscalBatchRequest._Release: Integer;
+begin
+  Result := TInterfacedObjectAccess(Self)._Release;
 end;
 
 end.
