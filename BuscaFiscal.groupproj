@@ -1,0 +1,20 @@
+<ProjectGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F7E6D5C4-B3A2-4D9E-8F1A-D5C4B3A24D9E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="packages\delphi\BuscaFiscal.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="examples\BuscaFiscalExample.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+</ProjectGroup>
