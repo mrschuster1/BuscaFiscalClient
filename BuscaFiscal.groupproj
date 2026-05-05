@@ -17,4 +17,15 @@
             <Delphi.Personality/>
         </BorlandProject>
     </ProjectExtensions>
+    <!-- Alvos para automação e MSBuild -->
+    <Target Name="Build">
+        <MSBuild Projects="@(Projects)" Targets="Build"/>
+    </Target>
+    <Target Name="Clean">
+        <MSBuild Projects="@(Projects)" Targets="Clean"/>
+    </Target>
+    <Target Name="Make">
+        <MSBuild Projects="@(Projects)" Targets="Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </ProjectGroup>
