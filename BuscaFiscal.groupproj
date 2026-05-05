@@ -3,10 +3,10 @@
         <ProjectGuid>{84661858-693D-4B94-825B-C1E304A7F2A6}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="packages\delphi\BuscaFiscal.dproj">
+        <Projects Include="packages\delphi\BuscaFiscal.dpk">
             <Dependencies/>
         </Projects>
-        <Projects Include="examples\BuscaFiscalExample.dproj">
+        <Projects Include="examples\BuscaFiscalExample.dpr">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -17,5 +17,4 @@
             <Delphi.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </ProjectGroup>
