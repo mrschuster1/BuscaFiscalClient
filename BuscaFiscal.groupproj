@@ -1,6 +1,6 @@
 <ProjectGroup xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{F7E6D5C4-B3A2-4D9E-8F1A-D5C4B3A24D9E}</ProjectGuid>
+        <ProjectGuid>{7512F764-B9D6-4B8F-998C-D13504A7F2A6}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
         <Projects Include="packages\delphi\BuscaFiscal.dproj">
@@ -17,4 +17,32 @@
             <Delphi.Personality/>
         </BorlandProject>
     </ProjectExtensions>
+    <Target Name="BuscaFiscal">
+        <MSBuild Projects="packages\delphi\BuscaFiscal.dproj"/>
+    </Target>
+    <Target Name="BuscaFiscal:Clean">
+        <MSBuild Projects="packages\delphi\BuscaFiscal.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BuscaFiscal:Make">
+        <MSBuild Projects="packages\delphi\BuscaFiscal.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BuscaFiscalExample">
+        <MSBuild Projects="examples\BuscaFiscalExample.dproj"/>
+    </Target>
+    <Target Name="BuscaFiscalExample:Clean">
+        <MSBuild Projects="examples\BuscaFiscalExample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BuscaFiscalExample:Make">
+        <MSBuild Projects="examples\BuscaFiscalExample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="BuscaFiscal;BuscaFiscalExample"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="BuscaFiscal:Clean;BuscaFiscalExample:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="BuscaFiscal:Make;BuscaFiscalExample:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </ProjectGroup>
